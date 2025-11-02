@@ -1,4 +1,4 @@
-const textures = {}
+let textures = {}
 let selectedTexture
 
 function loadTextures() {

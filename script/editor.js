@@ -31,12 +31,38 @@ function switchPage(page) {
 }
 
 function exportProject() {
-    //javascript bullshit making me have to turn the img elements in textures into actual saveable crap grr
     const data = {}
     data.sprites = sprites
     data.textures = textures
     console.log(data)
     download(JSON.stringify(data), 'project.tcp', 'application/json')
+}
+
+function importProject() {
+    const fp = document.createElement('input')
+    fp.type = 'file'
+    fp.accept = '.tcp'
+    let data
+
+    fp.addEventListener('change', () => {
+        const file = fp.files[0]
+        const r = new FileReader()
+
+        r.onload = (e) => {
+            if(!confirm("Are you sure you want to replace the contents of the current project? They'll be gone forever! (a long time)")) {return}
+            data = JSON.parse(e.target.result)
+            sprites = data.sprites
+            textures = data.textures
+            console.log(data.sprites)
+            renderSpritesPane()
+            updateCanvas()
+        }
+
+        r.readAsText(file)
+    })
+    fp.click()
+
+
 }
 
 switchPage(1)

@@ -185,7 +185,26 @@ html,body {
     cursor: pointer;
 }
 
+#new-texture {
+    position: absolute;
+    z-index: 200;
+    background-color: rgb(129, 204, 18);
+    left: 10px;
+    bottom: 10px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
 #new-sprite * {
+    width: 100%;
+    height: 100%;
+}
+
+#new-texture * {
     width: 100%;
     height: 100%;
 }
@@ -300,6 +319,7 @@ html,body {
     height: 100%;
     background-color: rgb(44, 44, 44);
     background-image: url('assets/texture-editor/grid.png');
+    overflow: hidden;
 }
 
 #texture-preview {

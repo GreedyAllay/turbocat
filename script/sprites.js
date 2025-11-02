@@ -22,7 +22,7 @@ function renderSpritesPane() {
 }
 
 //sprite management
-const sprites = {}
+let sprites = {}
 let selected
 
 createSprite('sprite1', 'turbocat')
@@ -66,7 +66,7 @@ function loadSprite(id) {
 }
 
 function deleteSprite(id) {
-    sprites[id].delete()
+    delete sprites[id]
     updateCanvas()
 }
 
@@ -75,6 +75,7 @@ function updateSpriteInputs() {
     size_input.value = sprites[id].transform.size*100
     rotation_input.value = sprites[id].transform.rotation
     x_input.value = sprites[id].transform.pos.x
-    y_input.value = sprites[id].transform.pos.y    
+    y_input.value = sprites[id].transform.pos.y
+    name_input.value = id
 }
 loadSprite('sprite1')
