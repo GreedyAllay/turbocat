@@ -35,7 +35,6 @@ function exportProject() {
     const data = {}
     data.sprites = sprites
     data.textures = textures
-    console.log(data)
     download(JSON.stringify(data), 'project.tcp', 'application/json')
 }
 
@@ -54,7 +53,6 @@ function importProject() {
             data = JSON.parse(e.target.result)
             sprites = data.sprites
             textures = data.textures
-            console.log(data.sprites)
             renderSpritesPane()
             updateCanvas()
         }

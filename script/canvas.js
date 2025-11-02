@@ -6,7 +6,6 @@ image.src = 'assets/project/cat.svg'
 
 function updateCanvas() {
     setTimeout(() => {
-        console.log('rendering canvas')
         const s = Object.keys(sprites)
         context.clearRect(0, 0, canvas.width, canvas.height);
         s.forEach(sprite => {
