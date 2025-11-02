@@ -35,6 +35,7 @@ function addTabListeners() {
 function addTextureListListeners() {
     const t = document.querySelectorAll('.texture-card')
     const t1 = document.querySelectorAll('.texture-title')
+    const texture_preview = document.getElementById('texture-preview')
     let i = 0
     t.forEach(element => {
         const index = i
@@ -44,6 +45,7 @@ function addTextureListListeners() {
             element.setAttribute('selected', 'true')
             sprites[selected].texture = element.textContent
             t1[index].setAttribute('selected', 'true')
+            texture_preview.src = textures[sprites[selected].texture].src
             renderSpritesPane()
             updateCanvas()
         })

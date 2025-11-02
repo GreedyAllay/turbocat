@@ -58,7 +58,7 @@ async function run(command, sprite) {
 function forever(command, sprite) {
     setInterval
     const id = setInterval(() => {
-        run(command, sprite)
+        run('rotate 20;', sprite)
         console.log(command)
     }, frametime);
 }

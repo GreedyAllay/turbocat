@@ -25,7 +25,7 @@ function renderSpritesPane() {
 const sprites = {}
 let selected
 
-createSprite('sprite1', 'cat')
+createSprite('sprite1', 'turbocat')
 
 function createSprite(id, t) {
     const s = Object.keys(sprites)
@@ -77,3 +77,4 @@ function updateSpriteInputs() {
     x_input.value = sprites[id].transform.pos.x
     y_input.value = sprites[id].transform.pos.y    
 }
+loadSprite('sprite1')

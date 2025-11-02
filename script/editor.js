@@ -18,7 +18,7 @@ function switchPage(page) {
     codeTab.setAttribute('selected', 'true')
             break
         case 1:
-            texturePane.style.display = 'block'
+            texturePane.style.display = 'flex'
             renderTexturesList()
     textureTab.setAttribute('selected', 'true')
             break
