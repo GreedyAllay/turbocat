@@ -46,9 +46,13 @@ html,body {
 
 #code {
     color: white;
-    height: 100%;
+    height: 80%;
     width: calc(100%-10px);
     padding: 10px;
+}
+
+#code:focus {
+    outline: none;
 }
 
 .topbar-item {
@@ -353,12 +357,13 @@ input:focus {
 
 #console {
     width: 100%;
-    height: 100%;
+    height: 14%;
     background-color: rgb(8, 8, 8);
     color: rgb(199, 27, 27);
+    overflow-y: scroll;
 }
 
 #code-pane {
     width: 100%;
-    height: 80%;
+    height: 100vh;
 }

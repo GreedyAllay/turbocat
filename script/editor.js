@@ -65,4 +65,4 @@ function importProject() {
 }
 
 switchPage(0)
-window.scrollTo(0, 0);
+document.onload(window.scrollTo(0, 0))
