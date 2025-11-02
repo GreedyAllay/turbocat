@@ -1,5 +1,5 @@
 const page = 0
-const console = document.getElementById('console')
+const console_pane = document.getElementById('console')
 function switchPage(page) {
     const codeEditor = document.getElementById('code-pane')
     const texturePane = document.getElementById('textures')

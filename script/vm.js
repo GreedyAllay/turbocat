@@ -16,7 +16,7 @@ async function execute(code) {
        eval(code) 
     } catch (e) {
         alert(e)
-        console.innerHTHML += e
+        console_pane.innerHTHML += e
     }
     updateCanvas()
     updateSpriteInputs()
