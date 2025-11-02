@@ -65,4 +65,14 @@ function importProject() {
 }
 
 switchPage(0)
-document.onload(window.scrollTo(0, 0))
+
+function loadDefaults() {
+    const c = document.getElementById('code')
+    c.textContent = `
+    vm.shift(5, 5);
+    vm.spin(5)
+    `
+}
+
+window.scrollTo(0, 0)
+loadDefaults()
