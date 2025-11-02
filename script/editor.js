@@ -1,6 +1,7 @@
 const page = 0
+const console = document.getElementById('console')
 function switchPage(page) {
-    const codeEditor = document.getElementById('code')
+    const codeEditor = document.getElementById('code-pane')
     const texturePane = document.getElementById('textures')
     const audioPane = document.getElementById('audio')
     const codeTab = document.getElementById('code-tab')
@@ -65,4 +66,5 @@ function importProject() {
 
 }
 
-switchPage(1)
+switchPage(0)
+window.scrollTo(0, 0);
