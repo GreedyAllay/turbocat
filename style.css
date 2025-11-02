@@ -1,0 +1,322 @@
+html,body {
+    margin: 0;
+    overflow: hidden ;
+    font-family: Archivo;
+    user-select: none;
+    background-color: rgb(49, 49, 49);
+    scrollbar-color: rgb(147, 230, 22, .5) transparent;
+}
+
+#editor-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#editor {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(31, 31, 31);
+}
+
+#top-bar {
+    background-color: rgb(77, 77, 77);
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#stage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    outline-width: 1px;
+    outline-color:rgb(43, 43, 43);
+    outline-style: solid;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#code {
+    color: white;
+    height: 100%;
+    width: calc(100%-10px);
+    padding: 10px;
+}
+
+.topbar-item {
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(77, 77, 77);
+    transition: .1s;
+    color: white;
+}
+
+.topbar-item:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.topbar-item:active {
+    transform: scale(.95);
+    filter: brightness(.9);
+}
+
+#right-wrapper {
+    height: 100%;
+    width: 49%;
+}
+
+#action-bar {
+    width: 100%;
+    margin: 5px;
+    margin-top: 0px;
+    margin-bottom: -10px;
+    height: fit-content;
+    padding: 5px;
+}
+
+.action-bar-button {
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: fit-content;
+    height: 15px;
+}
+
+.action-bar-button:hover {
+    background-color: rgba(128, 128, 128, 0.301);
+    cursor: pointer;
+    transition: .1s;
+}
+
+.action-bar-button:active {
+    transform: scale(.95);
+    filter: brightness(.9);
+}
+
+#run {
+    width: fit-content;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#run * {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+#sprites {
+    background-color: rgb(82, 82, 82);
+    width: fill;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    height: 20%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+}
+
+.sprite {
+    background-color: rgb(110, 110, 110);
+    width: 50px;
+    max-width: 50px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.sprite [selected="true"] {
+    max-width: fit-content;
+}
+
+.tab[selected="true"] {
+    background-color: rgb(129, 204, 18) !important;
+    margin-top: 0;
+}
+
+.sprite[selected="true"] {
+    background-color: rgb(129, 204, 18) !important;
+    outline-width: 3px;
+    outline-color: rgba(147, 230, 22, .5) ;
+    outline-style: solid;
+}
+
+.texture-card[selected="true"] {
+    background-color: rgb(41, 41, 41) !important;
+    outline-width: 3px;
+    outline-color: rgba(147, 230, 22, .5);
+    outline-style: solid;
+}
+
+.texture-title[selected="true"] {
+    background-color: rgb(129, 204, 18) !important;
+}
+
+
+#new-sprite {
+    position: absolute;
+    z-index: 200;
+    background-color: rgb(129, 204, 18);
+    right: 10px;
+    bottom: 10px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
+#new-sprite * {
+    width: 100%;
+    height: 100%;
+}
+
+#left-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#tabs {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    gap: 5px;
+    padding-left: 10px;
+}
+.tab {
+    background-color: rgb(112, 112, 112);
+    cursor: pointer;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    margin-top: 5px;
+    padding-top: 2px;
+}
+
+#textures {
+    height: 100%;
+    background-color: rgb(31, 31, 31);
+    display: none;
+}
+
+#textures [selected="true"] {
+    margin-top: 10px;
+}
+
+#audio {
+    height: 100%;
+    background-color: rgb(128, 0, 0);
+    display: none;
+}
+
+#properties {
+    background-color: rgb(82, 82, 82);
+    width: fill;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    height: 50px;
+    flex-wrap: wrap;
+}
+
+.texture-card {
+    background-color: rgb(107, 107, 107);
+    padding: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .1s;
+}
+
+.texture-image {
+    height: 70%;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5px;
+    filter: drop-shadow(2px 5px 4px #0000003d);
+}
+
+.texture-title {
+    color: white;
+    background-color: rgb(73, 73, 73);
+    margin: -10px;
+    padding-bottom: 3px;
+    padding-top: 1px;
+    margin-top: 3px;
+}
+
+.sprite-property {
+    display: flex;
+    color: white;
+}
+
+#texture-list {
+    background-color: rgb(49, 49, 49);
+    width: fit-content;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.sprite-image {
+    width: 70%;
+    height: auto;
+    max-height: 70%;
+    margin-bottom: -15px;
+    filter: drop-shadow(2px 5px 4px #0000003d);
+}
+
+#texture-editor {
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    position: absolute;
+}
+
+input {
+    background-color: rgb(48, 48, 48);
+    margin: 10px;
+    width: 50px;
+    border: none;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: rgba(147, 230, 22, 0.103);
+    color: white;
+    border-radius: 5px;
+    transition: .1s;
+}
+
+input:focus {
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: rgba(147, 230, 22, .5);
+}

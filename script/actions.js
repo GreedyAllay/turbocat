@@ -1,0 +1,75 @@
+document.getElementById('run').addEventListener('click', () => { execute(document.getElementById('code').textContent) })
+
+function addSpritesPaneEventListener() {
+    const s = document.querySelectorAll('.sprite')
+    s.forEach(element => {
+        element.addEventListener('click', () => {
+            s.forEach(element => { if(element.getAttribute('selected') === 'true') {element.setAttribute('selected', 'false')} })
+            element.setAttribute('selected', 'true')
+            loadSprite(element.textContent)
+        })
+    });
+}
+
+document.getElementById('new-sprite').addEventListener('click', () => { const p = prompt('Enter a new name', 'cat'); if(p) {createSprite(p)}  })
+
+function addTopBarListeners() { 
+    document.getElementById('save-button').addEventListener('click', () => { exportProject() })
+    document.getElementById('new-button').addEventListener('click', () => { location.reload() })
+}
+
+function addTabListeners() {
+    const t = document.querySelectorAll('.tab')
+    let i = 0
+    t.forEach(element => {
+        const index = i
+        element.addEventListener('click', () => {
+            t.forEach(element => { if(element.getAttribute('selected') === 'true') {element.setAttribute('selected', 'false')} })
+            element.setAttribute('selected', 'true')
+            switchPage(index)
+        })
+    i++
+    })
+}
+
+function addTextureListListeners() {
+    const t = document.querySelectorAll('.texture-card')
+    const t1 = document.querySelectorAll('.texture-title')
+    let i = 0
+    t.forEach(element => {
+        const index = i
+        element.addEventListener('click', () => {
+            t.forEach(element => { if(element.getAttribute('selected') === 'true') {element.setAttribute('selected', 'false')} })
+            t1.forEach(element => { if(element.getAttribute('selected') === 'true') {element.setAttribute('selected', 'false')} })
+            element.setAttribute('selected', 'true')
+            sprites[selected].texture = element.textContent
+            t1[index].setAttribute('selected', 'true')
+            renderSpritesPane()
+            updateCanvas()
+        })
+    i++
+    })
+}
+
+const size_input = document.getElementById('size-input')
+const rotation_input = document.getElementById('rotation-input')
+const x_input = document.getElementById('x-input')
+const y_input = document.getElementById('y-input')
+size_input.addEventListener('change', (e) => {
+    sprites[selected].transform.size = (size_input.value/100)
+    updateCanvas()
+})
+x_input.addEventListener('change', (e) => {
+    sprites[selected].transform.pos.x = (x_input.value)
+    updateCanvas()
+})
+y_input.addEventListener('change', (e) => {
+    sprites[selected].transform.pos.y = (y_input.value)
+    updateCanvas()
+})
+rotation_input.addEventListener('change', (e) => {
+    if(rotation_input.value > 359) {rotation_input.value = 0}
+    if(rotation_input.value < 0) {rotation_input.value = 359}
+    sprites[selected].transform.rotation = (rotation_input.value)
+    updateCanvas()
+})

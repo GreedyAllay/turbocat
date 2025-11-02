@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>TurboCat</title>
+    <link rel="icon" type="image/x-icon" href="assets/general/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="top-bar">
+    </div>
+  <div id="editor-wrapper">
+    <div id="editor">
+        <div id="left-wrapper">
+            <div id="tabs"></div>
+            <div id="code" contenteditable="true"></div>
+            <div id="textures">
+                <div id="texture-list"></div>
+                <div id="texture-editor"></div>
+            </div>
+            <div id="audio">
+                geluidjes
+                <br>
+            </div>
+        </div>
+    </div>
+    <div id="right-wrapper">
+        <div id="action-bar">
+            <div id="run" class="action-bar-button"><img src="assets/action-bar/start.svg" alt=""></div>
+        </div>
+        <canvas id="stage"></canvas>
+        <div id="sprites">
+            <div id="new-sprite">
+                <img src="assets/sprite-pane/plus.svg" alt="">
+            </div>
+        </div>
+        <div id="properties">
+            <div class="sprite-property"><p>x </p><input type="number" id="x-input"></div>
+            <div class="sprite-property"><p>y </p><input type="number" id="y-input"></div>
+            <div class="sprite-property"><p>size </p><input type="number" id="size-input"></div>
+            <div class="sprite-property"><p>rotation </p><input type="number" id="rotation-input"></div>
+        </div>
+        
+    </div>
+    
+</div>  
+
+
+<script src="script/textures.js"></script>
+<script src="script/tools.js"></script>
+<script src="script/actions.js"></script>
+<script src="script/topbar.js"></script>
+<script src="script/tabs.js"></script>
+<script src="script/canvas.js"></script>
+<script src="script/sprites.js"></script>
+<script src="script/tf.js"></script>
+<script src="script/editor.js"></script>
+<script src="script/vm.js"></script>
+</body>
