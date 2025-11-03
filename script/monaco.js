@@ -4,10 +4,7 @@ let codeEditor
 
 require(["vs/editor/editor.main"], function () {
     codeEditor = monaco.editor.create(document.getElementById("code"), {
-    value: `// A little example. This moves the sprite and rotates it slightly.
-transform.shift(5, 5)
-transform.spin(20)
-`,
+    value: ``,
     language: "javascript",
     theme: "vs-dark",
     automaticLayout: true
@@ -23,3 +20,4 @@ declare const transform: {
 declare const sprites: poop;
 declare const textures: any;
 `)
+

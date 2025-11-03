@@ -94,3 +94,12 @@ function loadDefaults() {
 }
 
 window.scrollTo(0, 0)
+
+
+setInterval(() => {
+    if(document.readyState === 'complete') {
+        codeEditor.focus()
+        loadSprite('sprite1')
+        return
+    }
+}, 100);

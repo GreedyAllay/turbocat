@@ -26,6 +26,10 @@ let sprites = {}
 let selected
 
 createSprite('sprite1', 'turbocat')
+sprites.sprite1.code = `// A little example. This moves the sprite and rotates it slightly.
+transform.shift(5, 5)
+transform.spin(20)
+`
 
 function createSprite(id, t) {
     const s = Object.keys(sprites)
@@ -59,7 +63,7 @@ function createSprite(id, t) {
 
 function loadSprite(id) {
     const c = document.getElementById('code')
-    if(codeEditor.getValue()) {sprites[selected].code = codeEditor.getValue()}
+    if(codeEditor.getValue() && selected) {sprites[selected].code = codeEditor.getValue()}
     if(sprites[id].code) {codeEditor.setValue(sprites[id].code)} else {codeEditor.setValue("")}
     selected = id
     updateSpriteInputs()
@@ -78,9 +82,10 @@ function updateSpriteInputs() {
     y_input.value = sprites[id].transform.pos.y
     name_input.value = id
 }
-loadSprite('sprite1')
 
 function saveCode() {
     const c = document.getElementById('code')
     if(codeEditor.getValue()) {sprites[selected].code = codeEditor.getValue()}
 }
+
+loadSprite('sprite1')
