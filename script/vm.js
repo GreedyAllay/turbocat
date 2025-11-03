@@ -1,26 +1,26 @@
 const transform = {
     move(x, y) {
-        sprites[selected].transform.pos.x = x
-        sprites[selected].transform.pos.y = y
+        sprites[runID].transform.pos.x = x
+        sprites[runID].transform.pos.y = y
     },
     shift(x, y) {
-        sprites[selected].transform.pos.x += x
-        sprites[selected].transform.pos.y += y
+        sprites[runID].transform.pos.x += x
+        sprites[runID].transform.pos.y += y
     },
     dir(d) {
-        sprites[selected].transform.rotation = d
+        sprites[runID].transform.rotation = d
     },
     spin(d) {
-        sprites[selected].transform.rotation += d
+        sprites[runID].transform.rotation += d
     }
 }
 
 const display = {
     size(s) {
-        sprites[selected].transform.size = s
+        sprites[runID].transform.size = s
     },
     texture(name) {
-        sprites[selected].texture = name
+        sprites[runID].texture = name
     }
 }
 
@@ -30,9 +30,10 @@ const audio = {
     }
 }
 
-async function execute(code) {
+async function execute(code, spriteID) {
     try {
-       eval(code) 
+        const id = spriteID
+        eval(code) 
     } catch (e) {
         console_pane.innerHTML += `${e}<br>`
     }
@@ -40,10 +41,12 @@ async function execute(code) {
     updateSpriteInputs()
 }
 
+let runID
+
 function runAll() {
     const s = Object.keys(sprites)
     s.forEach(sprite => {
-        
+        runID = sprite
+        execute(sprites[sprite].code)
     })
-    execute(codeEditor.getValue())
 }

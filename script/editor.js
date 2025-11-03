@@ -35,7 +35,7 @@ function exportProject() {
     const data = {}
     data.sprites = sprites
     data.textures = textures
-    download(JSON.stringify(data), 'project.json', 'application/json')
+    download(JSON.stringify(data), 'project.tcp', 'application/json')
 }
 
 function importProject() {
@@ -55,6 +55,7 @@ function importProject() {
             textures = data.textures
             renderSpritesPane()
             updateCanvas()
+            codeEditor.setValue('')
         }
 
         r.readAsText(file)
@@ -100,7 +101,8 @@ function waitForPage() {
             codeEditor.focus()
             loadSprite('sprite1')
             window.scrollTo(0, 0)
-            clearInterval(i);
+            updateCanvas()
+            clearInterval(i)
         }
     }, 100);
 }
