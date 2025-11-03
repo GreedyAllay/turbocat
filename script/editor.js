@@ -95,11 +95,14 @@ function loadDefaults() {
 
 window.scrollTo(0, 0)
 
+function waitForPage() {
+    const i = setInterval(() => {
+        if(document.readyState === 'complete') {
+            codeEditor.focus()
+            loadSprite('sprite1')
+            clearInterval(i);
+        }
+    }, 100);
+}
 
-setInterval(() => {
-    if(document.readyState === 'complete') {
-        codeEditor.focus()
-        loadSprite('sprite1')
-        return
-    }
-}, 100);
+waitForPage()
