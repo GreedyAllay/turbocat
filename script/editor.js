@@ -1,13 +1,13 @@
 const page = 0
 const console_pane = document.getElementById('console')
 function switchPage(page) {
-    const codeEditor = document.getElementById('code-pane')
+    const codeEditor0 = document.getElementById('code-pane')
     const texturePane = document.getElementById('textures')
     const audioPane = document.getElementById('audio')
     const codeTab = document.getElementById('code-tab')
     const textureTab = document.getElementById('texture-tab')
     const audioTab = document.getElementById('audio-tab')
-    codeEditor.style.display = 'none'
+    codeEditor0.style.display = 'none'
     texturePane.style.display = 'none'
     audioPane.style.display = 'none'
     codeTab.setAttribute('selected', 'false')
@@ -15,7 +15,7 @@ function switchPage(page) {
     audioTab.setAttribute('selected', 'false')
     switch (page) {
         case 0:
-            codeEditor.style.display = 'block'
+            codeEditor0.style.display = 'block'
     codeTab.setAttribute('selected', 'true')
             break
         case 1:
@@ -35,7 +35,7 @@ function exportProject() {
     const data = {}
     data.sprites = sprites
     data.textures = textures
-    download(JSON.stringify(data), 'project.tcp', 'application/json')
+    download(JSON.stringify(data), 'project.json', 'application/json')
 }
 
 function importProject() {
@@ -66,13 +66,31 @@ function importProject() {
 
 switchPage(0)
 
+function importAsset() {
+    const fp = document.createElement('input')
+    let file
+    fp.type = 'file'
+    fp.click()
+
+    fp.onchange = () => {
+        file = fp.files[0]
+        if(!file) {return}
+        const r = new FileReader()
+    r.onload = (e) => {
+        addTexture(file.name, e.target.result)
+        renderTexturesList()
+    }
+
+    r.readAsDataURL(file)
+    }
+}
+
 function loadDefaults() {
     const c = document.getElementById('code')
     c.textContent = `
-    vm.shift(5, 5);
-    vm.spin(5)
+    transform.shift(5, 5);
+    transform.spin(5)
     `
 }
 
 window.scrollTo(0, 0)
-loadDefaults()

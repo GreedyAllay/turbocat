@@ -1,4 +1,4 @@
-const vm = {
+const transform = {
     move(x, y) {
         sprites[selected].transform.pos.x = x
         sprites[selected].transform.pos.y = y
@@ -15,6 +15,20 @@ const vm = {
     }
 }
 
+const display = {
+    size(s) {
+        sprites[selected].transform.size = s
+    },
+    texture(name) {
+        sprites[selected].texture = name
+    }
+}
+
+const audio = {
+    play(id, name) {
+        alert('pretend as if sound ' + name + ' is playing now with the id ' + id)
+    }
+}
 
 async function execute(code) {
     try {
@@ -24,4 +38,12 @@ async function execute(code) {
     }
     updateCanvas()
     updateSpriteInputs()
+}
+
+function runAll() {
+    const s = Object.keys(sprites)
+    s.forEach(sprite => {
+        
+    })
+    execute(codeEditor.getValue())
 }

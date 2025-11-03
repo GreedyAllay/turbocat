@@ -1,4 +1,4 @@
-document.getElementById('run').addEventListener('click', () => { execute(document.getElementById('code').textContent) })
+document.getElementById('run').addEventListener('click', () => { runAll() })
 
 function addSpritesPaneEventListener() {
     const s = document.querySelectorAll('.sprite')
@@ -12,28 +12,14 @@ function addSpritesPaneEventListener() {
 }
 
 document.getElementById('new-sprite').addEventListener('click', () => { const p = prompt('Enter a new name', 'cat'); if(p) {createSprite(p)}  })
-document.getElementById('new-texture').addEventListener('click', () => { 
-    const fp = document.createElement('input')
-    let file
-    fp.type = 'file'
-    fp.click()
-    if(!file) {return}
-
-    const r = new FileReader()
-
-    r.onload = (e) => {
-        file = fp.files[0]
-        const data = e.target.result
-        alert(data)
-    }
-
-    alert(r.readAsDataURL(file))
+document.getElementById('new-texture').addEventListener('click', () => {
+    importAsset()
   })
 
 function addTopBarListeners() { 
     document.getElementById('save-button').addEventListener('click', () => { exportProject() })
     document.getElementById('load-button').addEventListener('click', () => { importProject() })
-    document.getElementById('new-button').addEventListener('click', () => { location.reload() })
+    document.getElementById('new-button').addEventListener('click', () => { if(confirm('Are you sure?')) location.reload(); })
 }
 
 function addTabListeners() {
@@ -111,4 +97,8 @@ name_input.addEventListener('change', (e) => {
         renderSpritesPane()        
     }
 
+})
+
+codeEditor.addEventListener('change', (e) => {
+    saveCode()
 })

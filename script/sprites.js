@@ -41,8 +41,8 @@ function createSprite(id, t) {
     sprites[id] = {
         transform: {
             pos: {
-                x: 69,
-                y: 21
+                x: 0,
+                y: 0
             },
             size: 1,
             rotation: 0,
@@ -59,8 +59,8 @@ function createSprite(id, t) {
 
 function loadSprite(id) {
     const c = document.getElementById('code')
-    if(c.textContent) {sprites[selected].code = c.textContent}
-    if(sprites[id].code) {c.textContent = sprites[id].code } else {c.textContent = ""}
+    if(codeEditor.getValue()) {sprites[selected].code = codeEditor.getValue()}
+    if(sprites[id].code) {codeEditor.setValue(sprites[id].code)} else {codeEditor.setValue("")}
     selected = id
     updateSpriteInputs()
 }
@@ -79,3 +79,8 @@ function updateSpriteInputs() {
     name_input.value = id
 }
 loadSprite('sprite1')
+
+function saveCode() {
+    const c = document.getElementById('code')
+    if(codeEditor.getValue()) {sprites[selected].code = codeEditor.getValue()}
+}
