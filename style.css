@@ -405,6 +405,8 @@ input:focus {
     width: calc(100%-10px);
     flex-grow: 1;
     transition: .2s;
+    transform: translateX(-160px);
+
 }
 
 #codeblocks {
@@ -426,7 +428,7 @@ input:focus {
     background-color: rgb(58, 58, 58);
     width: 40px;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 16/9;
     margin-left: auto;
 }
 
@@ -470,4 +472,5 @@ input:focus {
 }
 
 #code[hide='true'] {
+    transform: translateX(0);
 }
