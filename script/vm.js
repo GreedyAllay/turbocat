@@ -21,6 +21,13 @@ const display = {
     },
     texture(name) {
         sprites[runID].texture = name
+    },
+    text(txt) {
+        drawText(
+            sprites[runID].transform.pos.x,
+            sprites[runID].transform.pos.y,
+            txt
+        )
     }
 }
 

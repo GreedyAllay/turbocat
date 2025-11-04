@@ -99,6 +99,13 @@ name_input.addEventListener('change', (e) => {
 
 })
 
-codeEditor.addEventListener('change', (e) => {
+codeEditor.addEventListener('change', () => {
     saveCode()
 })
+
+let cursor = {}
+function initStageCursor() {
+    const stage = document.getElementById('stage')
+        stage.addEventListener('mousemove', (e) => {
+    })
+}

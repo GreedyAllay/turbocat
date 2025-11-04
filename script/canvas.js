@@ -30,4 +30,12 @@ function updateCanvas() {
             )
             context.restore();
         })
-    }
+}
+
+function drawText(x, y, text) {
+    setTimeout(() => {
+        context.font = "48px serif";
+        context.fillText(text, x, y);
+    }, 10);
+  
+}
