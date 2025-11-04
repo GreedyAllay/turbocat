@@ -482,10 +482,13 @@ input:focus {
 }
 
 .codeblock {
-    padding: 10px;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .codeblock:hover {
-    background-color: gray;
+    background-color: rgb(70, 70, 70);
 }

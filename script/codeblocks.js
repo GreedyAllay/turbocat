@@ -1,11 +1,13 @@
 const blocks = {}
 
-defineBlock('test block', 'transform.shift(20, 20)', 'sex')
+defineBlock('move x y', 'transform.shift(20, 20)', '#215dcc', 'motion-shift')
+defineBlock('goto x y', 'transform.move(20, 20)', '#215dcc', 'motion-move')
 
-function defineBlock(t, c, id) {
+function defineBlock(t, c, clr, id) {
     blocks[id] = {
         text: t,
-        call: c
+        call: c,
+        color: clr,
     }
 }
 
@@ -17,6 +19,7 @@ function generateCodeblocks() {
         const el = document.createElement('p')
         el.textContent = blocks[block].text
         el.className = 'codeblock'
+        el.style.color = blocks[block].color
         codeblocks.appendChild(el)
         i++
     })    
