@@ -102,6 +102,7 @@ function waitForPage() {
             loadSprite('sprite1')
             window.scrollTo(0, 0)
             updateCanvas()
+            hideLoading()
             clearInterval(i)
         }
     }, 100);

@@ -99,9 +99,9 @@ name_input.addEventListener('change', (e) => {
 
 })
 
-codeEditor.addEventListener('change', () => {
-    saveCode()
-})
+//codeEditor.addEventListener('change', () => {
+//    saveCode()
+//})
 
 let cursor = {}
 function initStageCursor() {
@@ -109,3 +109,26 @@ function initStageCursor() {
         stage.addEventListener('mousemove', (e) => {
     })
 }
+
+let codeBlocksOpened = true
+
+function setToggleCodeBlocksEventListener () {
+    const toggle = document.getElementById('toggle-codeblocks')
+    const pane = document.getElementById('codeblocks')
+    const code = document.getElementById('code')
+    toggle.addEventListener('click', () => {
+        if(codeBlocksOpened) {
+            pane.setAttribute('hide', 'true')
+            toggle.setAttribute('hide', 'true')
+            code.setAttribute('hide', 'true')
+            codeBlocksOpened = false
+        } else {
+            pane.setAttribute('hide', 'false')
+            toggle.setAttribute('hide', 'false')
+            code.setAttribute('hide', 'false')
+            codeBlocksOpened = true
+        }
+    })
+}
+
+setToggleCodeBlocksEventListener()

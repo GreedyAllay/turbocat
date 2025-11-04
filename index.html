@@ -14,10 +14,18 @@
     <div id="editor">
         <div id="left-wrapper">
             <div id="tabs"></div>
-            <div id="code-pane">
-                <div id="code" contenteditable="true" spellcheck="false"></div>
-                <div id="console"></div>
-            </div>
+                <div id="code-pane">
+                    <div id="code-pane-divider">
+                        <div id="codeblocks" hide="false">
+                            <div id="codeblock-title">
+                                <p class="codeblock-title">Codeblocks</p>
+                                <div id="toggle-codeblocks" hide="false"><img src="assets/codeblocks/bar/close.svg" alt="" id="codeblock-toggle-icon" hide="false"></div>
+                            </div>
+                        </div>
+                        <div id="code" contenteditable="true" spellcheck="false"></div>                        
+                    </div>
+                    <div id="console"></div>
+                </div>
             <div id="textures">
                 <div id="texture-list"></div>
                     <div id="new-texture">
@@ -55,7 +63,7 @@
     
 </div>  
 
-
+<script src="script/loading.js"></script>
 <script src="script/textures.js"></script>
 <script src="script/tools.js"></script>
 <script src="script/actions.js"></script>
@@ -67,7 +75,7 @@
 <script src="script/tf.js"></script>
 <script src="script/editor.js"></script>
 <script src="script/vm.js"></script>
-<script src="script/vm.js"></script>
+<script src="script/codeblocks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.49.0/min/vs/loader.min.js"></script>
 <script src="script/monaco.js"></script>
 </body>

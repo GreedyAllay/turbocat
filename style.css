@@ -48,12 +48,6 @@ html,body::selection {
     image-rendering: crisp-edges;
 }
 
-#code {
-    color: white;
-    height: 80%;
-    width: calc(100%-10px);
-}
-
 #code:focus {   
     outline: none;
 }
@@ -158,6 +152,7 @@ html,body::selection {
 .tab[selected="true"] {
     background-color: rgb(129, 204, 18) !important;
     margin-top: 0;
+    transition: 0;
 }
 
 .sprite[selected="true"] {
@@ -240,6 +235,11 @@ html,body::selection {
     color: white;
     margin-top: 5px;
     padding-top: 2px;
+    transition: .2s;
+}
+
+.tab:active{
+    filter: brightness(.9);
 }
 
 #textures {
@@ -371,4 +371,105 @@ input:focus {
 #code-pane {
     width: 100%;
     height: 100vh;
+}
+
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(147, 230, 22, .5);
+    backdrop-filter: blur(10px);
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.loading-title {
+    color: white;
+    margin-top: 20%;
+    font-family: Archivo;
+    font-size: 50px;
+    font-weight: 800;
+    text-shadow: rgb(253, 253, 253) 0px 0px 40px;
+}
+
+#loading-screen[done='true'] {
+    filter: opacity(0);
+    transition: .2s;
+}
+
+#code {
+    color: white;
+    height: 100%;
+    width: calc(100%-10px);
+    flex-grow: 1;
+    transition: .2s;
+}
+
+#codeblocks {
+    width: 200px;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    flex-grow: 0;
+    color: white;
+    transition: .2s;
+}
+
+#code-pane-divider {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+#toggle-codeblocks {
+    background-color: rgb(58, 58, 58);
+    width: 40px;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+}
+
+#codeblocks[hide='true'] {
+    transform: translateX(0);
+}
+
+#codeblocks[hide='false'] {
+    transform: translateX(-160px);
+}
+
+#codeblock-toggle-icon {
+    width: 70%;
+    height: 70%;
+    margin-top: 7px;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+#codeblock-toggle-icon[hide='false'] {
+    src: url('assets/codeblocks/bar/open.svg');
+}
+
+#codeblock-toggle-icon[hide='true'] {
+    src: url('assets/codeblocks/bar/close.svg');
+}
+
+#codeblock-title {
+    width: 100%;
+    display: flex;
+}
+
+.codeblock-title {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#code[hide='false'] {
+    transform: translateX(-160px);
+    width: calc(100% - 10px);
+}
+
+#code[hide='true'] {
+    width: calc(100% - 10px);
 }
