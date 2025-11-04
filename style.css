@@ -430,6 +430,11 @@ input:focus {
     height: auto;
     aspect-ratio: 16/9;
     margin-left: auto;
+    transition: .05s;
+}
+
+#toggle-codeblocks:hover {
+    background-color: rgba(129, 204, 18, .5);
 }
 
 #codeblocks[hide='true'] {
@@ -459,6 +464,7 @@ input:focus {
 #codeblock-title {
     width: 100%;
     display: flex;
+    background-color: rgb(54, 54, 54);
 }
 
 .codeblock-title {
@@ -473,4 +479,13 @@ input:focus {
 
 #code[hide='true'] {
     transform: translateX(0);
+}
+
+.codeblock {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.codeblock:hover {
+    background-color: gray;
 }
