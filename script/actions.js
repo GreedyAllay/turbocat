@@ -1,4 +1,4 @@
-document.getElementById('run').addEventListener('click', () => { runAll() })
+document.getElementById('run').addEventListener('click', () => { saveCode(); runAll() })
 
 function addSpritesPaneEventListener() {
     const s = document.querySelectorAll('.sprite')

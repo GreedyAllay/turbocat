@@ -80,7 +80,7 @@ html,body::selection {
 #right-wrapper {
     height: 100%;
     width: fit-content;
-    margin-left: auto
+    margin-left: auto;
 }
 
 #action-bar {
