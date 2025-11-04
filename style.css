@@ -467,9 +467,7 @@ input:focus {
 
 #code[hide='false'] {
     transform: translateX(-160px);
-    width: calc(100% - 10px);
 }
 
 #code[hide='true'] {
-    width: calc(100% - 10px);
 }
