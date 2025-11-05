@@ -17,8 +17,9 @@ defineBlock('if, then', 'if(true) { \n//do something\n}', '#cc9021ff', 'control-
 defineBlock('if, then, else', 'if(true) { \n//do something\n} else { \n//do something else\n}', '#cc9021ff', 'control-ifelse')
 defineBlock('forever', 'setInterval(() => {\n    //do something\n}, ft)', '#cc9021ff', 'control-loop')
 
-defineLabel('Logic', '#3ecc21ff', 'logic-label')
+defineLabel('Operators', '#3ecc21ff', 'logic-label')
 defineBlock('compare a to b', '("a" == "b")', '#3ecc21ff', 'logic-compare')
+defineBlock('random {a} and {b}', 'random(1, 10)', '#3ecc21ff', 'operator-random')
 
 defineLabel('Variables', '#b4ac3eff', 'var-label')
 defineBlock('set {var} to {value}', 'var hello = "world"', '#b4ac3eff', 'var-set')

@@ -51,9 +51,10 @@ function createSprite(id, t) {
             size: 1,
             rotation: 0,
             width: 1,
-            height: 1
+            height: 1,
         },
         texture: t,
+        hidden: false
     }
     selected = s[s.length - 1]
     renderSpritesPane()

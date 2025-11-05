@@ -28,6 +28,12 @@ const display = {
             sprites[runID].transform.pos.y,
             txt
         )
+    },
+    show() {
+        sprites[runID].hidden = false
+    },
+    hide() {
+        sprites[runID].hidden = true
     }
 }
 

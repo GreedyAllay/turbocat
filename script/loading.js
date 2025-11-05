@@ -33,7 +33,20 @@ const modts = [
     "Crazy? I was crazy once. They put me in a rubber room. A rubber room filled with rats. And rats make me crazy. Crazy?...",
     "cord lat",
     'Welcome to SnailCat',
-    `"I suck at coding"`
+    `"I suck at coding"`,
+    "Also try TurboWarp!",
+    "Also try Rarry!",
+    "Also try Penguinmod",
+    "Also try Scratch! (actually don't)",
+    "Also try TeraMod!",
+    "Also try Minecraft!",
+    "Also try Unity!",
+    "Also try Godot!",
+    "Also try, catch!",
+    "Also try me out and see what reaction you get",
+    "Hey, I know nobody actually asks you this, but... how are you actually doing? :D",
+    "Scratch with actual clean, readable and editable source code!",
+    "Scratch with actual clean, readable and editable source code!",
 ]
 
 const loading_screen = document.createElement('div')
