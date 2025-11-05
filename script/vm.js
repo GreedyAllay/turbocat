@@ -7,7 +7,7 @@ const transform = {
         sprites[runID].transform.pos.x += x
         sprites[runID].transform.pos.y += y
     },
-    dir(d) {
+    rotate(d) {
         sprites[runID].transform.rotation = d
     },
     spin(d) {

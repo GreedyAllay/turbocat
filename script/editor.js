@@ -94,7 +94,6 @@ function loadDefaults() {
     `
 }
 
-
 function waitForPage() {
     const i = setInterval(() => {
         if(document.readyState === 'complete') {
@@ -109,3 +108,4 @@ function waitForPage() {
 }
 
 waitForPage()
+

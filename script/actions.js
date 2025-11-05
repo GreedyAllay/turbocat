@@ -133,11 +133,42 @@ function setToggleCodeBlocksEventListener () {
 
 setToggleCodeBlocksEventListener()
 
+let dragging = null
+
 function addCodeBlocksEventListeners() {
     const b = Object.keys(blocks)
     b.forEach(block => {
-        document.getElementById(`block-${block}`).addEventListener('click', () => {
-            codeEditor.setValue(codeEditor.getValue() + blocks[block].call + "\n") 
-        })
+        if(document.getElementById(`block-${block}`)) {
+            const thisEl = document.getElementById(`block-${block}`)
+            thisEl.addEventListener('click', () => {
+                codeEditor.setValue(codeEditor.getValue() + blocks[block].call + "\n")
+            })
+            if(false) {
+                thisEl.addEventListener('mousedown', () => {
+                    dragging = thisEl
+                    thisEl.style.filter = 'brightness(1.2)'
+                })            
+            }
+        }
+
+
     })
 }
+
+addEventListener('mouseup', (e) => {
+    dragging = null
+})
+
+
+addEventListener('mousemove', (e) => {
+    if(dragging) {
+        dragging.style.position = "fixed";
+        dragging.style.left = e.clientX
+        dragging.style.top = e.clientY
+    }    
+    
+    if(false) {
+        dragging.style.transform = `translateX(${e.clientX - Number(getComputedStyle(dragging).width.replace('px', '')/2)}px)
+        translateY(${e.clientY - Number(getComputedStyle(dragging).height.replace('px', '')/2)}px)`
+    }
+})
