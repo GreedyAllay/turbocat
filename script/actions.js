@@ -132,3 +132,12 @@ function setToggleCodeBlocksEventListener () {
 }
 
 setToggleCodeBlocksEventListener()
+
+function addCodeBlocksEventListeners() {
+    const b = Object.keys(blocks)
+    b.forEach(block => {
+        document.getElementById(`block-${block}`).addEventListener('click', () => {
+            codeEditor.setValue(codeEditor.getValue() + blocks[block].call + "\n") 
+        })
+    })
+}
