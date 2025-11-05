@@ -57,3 +57,7 @@ function runAll() {
         execute(sprites[sprite].code)
     })
 }
+
+const fps = 60
+
+const ft = 1/fps*1000

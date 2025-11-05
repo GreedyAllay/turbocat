@@ -110,7 +110,7 @@ function initStageCursor() {
     })
 }
 
-let codeBlocksOpened = true
+let codeBlocksOpened = false
 
 function setToggleCodeBlocksEventListener () {
     const toggle = document.getElementById('toggle-codeblocks')
@@ -141,7 +141,7 @@ function addCodeBlocksEventListeners() {
         if(document.getElementById(`block-${block}`)) {
             const thisEl = document.getElementById(`block-${block}`)
             thisEl.addEventListener('click', () => {
-                codeEditor.setValue(codeEditor.getValue() + blocks[block].call + "\n")
+                insertCode(blocks[block].call + '\n')
             })
             if(false) {
                 thisEl.addEventListener('mousedown', () => {

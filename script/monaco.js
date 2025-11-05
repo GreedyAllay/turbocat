@@ -95,3 +95,20 @@ monaco.languages.registerCompletionItemProvider("tcScript", {
 	},
 });
 }
+
+function insertCode(txt) {
+	const position = codeEditor.getPosition(); // current cursor position
+	codeEditor.executeEdits(null, [
+	{
+		range: new monaco.Range(
+		position.lineNumber,
+		position.column,
+		position.lineNumber,
+		position.column
+		),
+		text: txt,
+		forceMoveMarkers: true
+	}
+	]);
+
+}
