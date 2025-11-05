@@ -84,6 +84,7 @@ html,body::selection {
     margin-bottom: -10px;
     height: fit-content;
     padding: 5px;
+    display: flex;
 }
 
 .action-bar-button {
@@ -92,6 +93,14 @@ html,body::selection {
     border-radius: 5px;
     width: fit-content;
     height: 15px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.action-bar-button * {
+        width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
 }
 
 .action-bar-button:hover {
@@ -103,18 +112,6 @@ html,body::selection {
 .action-bar-button:active {
     transform: scale(.95);
     filter: brightness(.9);
-}
-
-#run {
-    width: fit-content;
-    padding-left: 13px;
-    padding-right: 13px;
-}
-
-#run * {
-    width: auto;
-    height: 100%;
-    aspect-ratio: 1/1;
 }
 
 #sprites {
@@ -258,6 +255,11 @@ html,body::selection {
     color: rgb(190, 190, 190);
     padding: 5px;
     display: none;
+}
+
+#fullscreen-button {
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 #properties {
