@@ -8,8 +8,32 @@ const modts = [
     "Javascript was originally called ECMAscript but later renamed to JavaScript to rise on Java's success",
     'me when I use https://rarry.vercel.app/',
     'Do people read these?',
-    "The mascot is based off of the main character in my game Cattie's World!"
-    
+    "The mascot is based off of the main character in my game Cattie's World!",
+    'Loading scripts...',
+    'Loading textures...',
+    'Loading sounds...',
+    'Loading turbocats...',
+    'Loading catties...',
+    'Loading axolays...',
+    'Loading ecmas...',
+    'Loading code palette...',
+    'Loading the entire javascript engine...',
+    'turbocar',
+    'CurboTat',
+    'Loading the main character...',
+    'Loading the matrix...',
+    'I forgot',
+    '21',
+    '69',
+    "67 (it's funny because it's overdone)",
+    `"By the maker of Cattie's World"`,
+    "I still can't believe I coded this all on my own without actual use of AI",
+    "Scratch, but for the cool kids",
+    'ddededodediamante',
+    "Crazy? I was crazy once. They put me in a rubber room. A rubber room filled with rats. And rats make me crazy. Crazy?...",
+    "cord lat",
+    'Welcome to SnailCat',
+    `"I suck at coding"`
 ]
 
 const loading_screen = document.createElement('div')
