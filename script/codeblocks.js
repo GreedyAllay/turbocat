@@ -21,14 +21,17 @@ defineLabel('Logic', '#3ecc21ff', 'logic-label')
 defineBlock('compare a to b', '("a" == "b")', '#3ecc21ff', 'logic-compare')
 
 defineLabel('Variables', '#b4ac3eff', 'var-label')
-defineBlock('set {var} to {value}', 'let hello = "world"', '#b4ac3eff', 'var-set')
+defineBlock('set {var} to {value}', 'var hello = "world"', '#b4ac3eff', 'var-set')
 defineBlock('force {var} to {value}', 'const hello = "world"', '#b4ac3eff', 'var-const')
+defineBlock('get value of {var}', '(hello)', '#b4ac3eff', 'var-get')
 
 
 defineLabel('Browser', '#21c08bff', 'browser-label')
 defineBlock('alert {message}', 'alert("hello, world!")', '#21c08bff', 'browser-alert')
 defineBlock('confirm {message}', 'confirm("destroy the world?")', '#21c08bff', 'browser-confirm')
 defineBlock('prompt {message}', 'prompt("what cat breed is your favourite?")', '#21c08bff', 'browser-prompt')
+defineBlock('log {message}', 'console.log("Hello!")', '#21c08bff', 'browser-log')
+defineBlock('trow {error}', 'throw ("error!")', '#21c08bff', 'browser-error')
 
 defineLabel('Miscellaneous', '#8a8a8aff', 'misc-label')
 defineBlock('//comment', '//', '#8a8a8aff', 'misc-comment')

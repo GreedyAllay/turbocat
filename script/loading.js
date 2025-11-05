@@ -6,8 +6,9 @@ const modts = [
     'When the turbo is warp',
     '(not) The first ever scratch recode',
     "Javascript was originally called ECMAscript but later renamed to JavaScript to rise on Java's success",
-    'me when rarry',
-    ''
+    'me when I use https://rarry.vercel.app/',
+    'Do people read these?',
+    "The mascot is based off of the main character in my game Cattie's World!"
     
 ]
 
