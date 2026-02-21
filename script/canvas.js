@@ -16,15 +16,13 @@ function updateCanvas() {
         const img = document.createElement('img')
         img.src = textures[sprites[sprite].texture].src
 
-        if(!img.complete) {return};
-            context.save();
-            context.translate((canvas.width/2),(canvas.height/2));
+        if(!img.complete) {return}
+            context.save()
             context.rotate(r*Math.PI/180)
-            context.translate(x, -y)
             context.drawImage(
                 img,
-                -img.width/2*size*w,
-                -img.height/2*size*h,
+                x + canvas.width/2,
+                y + canvas.height/2,
                 img.width*size*w,
                 img.height*size*h,
             )
@@ -39,3 +37,4 @@ function drawText(x, y, text) {
     }, 10);
   
 }
+

@@ -109,3 +109,39 @@ function waitForPage() {
 
 waitForPage()
 
+
+
+let fullscreen = false
+
+
+function toggleFullscreen() {
+    const fullscreenWrapper = document.getElementById("fullscreen-wrapper")
+    const editorElement = document.getElementById("editor")
+    const rightWrapper = document.getElementById("right-wrapper")
+    const canvasWrapper = document.getElementById("canvas-wrapper")
+    const actionBar = document.getElementById("action-bar")
+    const stageStyle = canvas.style
+
+
+    if(fullscreen) {
+        //reset
+        canvas.style = stageStyle
+        fullscreenWrapper.hidden = true
+        editorElement.style.display = 'block'
+        rightWrapper.style.display = 'block'
+        rightWrapper.prepend(actionBar)
+        canvasWrapper.append(canvas)
+        stage.setAttribute('fullscreen', 'false')
+    } else {
+        //enter
+        fullscreenWrapper.hidden = false
+        editorElement.style.display = 'none'
+        rightWrapper.style.display = 'none'
+        fullscreenWrapper.append(actionBar)
+        fullscreenWrapper.append(canvas)
+        stage.setAttribute('fullscreen', 'true')
+
+    }
+    fullscreen = !fullscreen
+}
+

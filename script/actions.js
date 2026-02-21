@@ -1,4 +1,5 @@
 document.getElementById('run').addEventListener('click', () => { saveCode(); runAll() })
+document.getElementById('fullscreen').addEventListener('click', () => { toggleFullscreen() })
 
 function addSpritesPaneEventListener() {
     const s = document.querySelectorAll('.sprite')
@@ -172,3 +173,4 @@ addEventListener('mousemove', (e) => {
         translateY(${e.clientY - Number(getComputedStyle(dragging).height.replace('px', '')/2)}px)`
     }
 })
+

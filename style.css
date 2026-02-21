@@ -48,6 +48,14 @@ html,body::selection {
     image-rendering: crisp-edges;
 }
 
+#stage[fullscreen="true"] {
+    width: auto;
+    height: auto;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 70px);
+    aspect-ratio: 16/9 !important;
+}
+
 #code:focus {   
     outline: none;
 }
@@ -257,7 +265,7 @@ html,body::selection {
     display: none;
 }
 
-#fullscreen-button {
+#fullscreen {
     margin-left: auto;
     margin-right: 20px;
 }
@@ -404,7 +412,7 @@ input:focus {
 #code {
     color: white;
     height: 100%;
-    width: calc(100%-10px);
+    width: 50px;
     flex-grow: 1;
     transition: .2s;
     transform: translateX(-160px);
@@ -513,4 +521,9 @@ input:focus {
 #loading-error {
     color: white;
     text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+}
+
+#fullscreen-wrapper {
+    width: 100%;
+    height: 100%;
 }
