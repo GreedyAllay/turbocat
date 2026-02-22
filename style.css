@@ -35,7 +35,6 @@ html,body::selection {
 }
 
 #stage {
-    width: auto;
     height: 50vh;
     aspect-ratio: 16/9;
     outline-width: 1px;
@@ -49,8 +48,7 @@ html,body::selection {
 }
 
 #stage[fullscreen="true"] {
-    width: auto;
-    height: auto;
+    height: 100%;
     max-width: calc(100% - 20px);
     max-height: calc(100% - 70px);
     aspect-ratio: 16/9 !important;
@@ -510,6 +508,8 @@ input:focus {
     margin: 10px;
     margin-top: 20px;
     font-size: 15px;
+    font-weight: 600;
+    color: rgb(205, 205, 205) !important;
 }
 
 #codeblocks-list {

@@ -174,3 +174,26 @@ addEventListener('mousemove', (e) => {
     }
 })
 
+function addCodeBlocksScrollEventListener() {
+    const codeBlockList = document.getElementById("codeblocks-list")
+    let isScrolling = false
+    let oldScroll
+    let oldMouseY
+    let mouseY
+    codeBlockList.addEventListener('pointerdown', (e) => {
+        isScrolling = true
+        oldScroll = codeBlockList.scrollTop
+        oldMouseY = mouseY
+    })
+    codeBlockList.addEventListener('pointerup', (e) => {
+        isScrolling = false
+    })
+    codeBlockList.addEventListener('mousemove', (e) => {
+        mouseY = e.clientX
+        if(isScrolling) {
+            codeBlockList.scrollTop = (oldScroll-(e.clientY-oldMouseY));
+        }
+    })
+}
+addCodeBlocksScrollEventListener()
+

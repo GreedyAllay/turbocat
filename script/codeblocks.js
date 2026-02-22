@@ -22,8 +22,8 @@ defineBlock('compare a to b', '("a" == "b")', '#3ecc21ff', 'logic-compare')
 defineBlock('random {a} and {b}', 'random(1, 10)', '#3ecc21ff', 'operator-random')
 
 defineLabel('Variables', '#b4ac3eff', 'var-label')
-defineBlock('set {var} to {value}', 'var hello = "world"', '#b4ac3eff', 'var-set')
-defineBlock('force {var} to {value}', 'const hello = "world"', '#b4ac3eff', 'var-const')
+defineBlock('set {var} to {value}', 'let hello = "world"', '#b4ac3eff', 'var-set')
+defineBlock('set constant {var} to {value}', 'const hello = "world"', '#b4ac3eff', 'var-const')
 defineBlock('get value of {var}', '(hello)', '#b4ac3eff', 'var-get')
 
 

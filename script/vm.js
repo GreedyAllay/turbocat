@@ -62,8 +62,15 @@ function runAll() {
         runID = sprite
         execute(sprites[sprite].code)
     })
+    loop()
 }
 
 const fps = 60
 
-const ft = 1/fps*1000
+const frametime = 1/fps
+
+function loop() {
+    setInterval(() => {
+        alert(sprites.sprite1.code)
+    }, frametime);
+}
