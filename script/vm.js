@@ -62,15 +62,22 @@ function runAll() {
         runID = sprite
         execute(sprites[sprite].code)
     })
-    loop()
+    handleLoop()
 }
 
 const fps = 60
 
 const frametime = 1/fps
 
-function loop() {
-    setInterval(() => {
-        alert(sprites.sprite1.code)
+let loop
+
+function handleLoop() {
+    const c = sprites.sprite1.code
+    loop = setInterval(() => {
+        eval(c.loop)
     }, frametime);
+}
+
+function stopAll() {
+    clearInterval(loop);
 }

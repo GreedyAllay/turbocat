@@ -1,4 +1,5 @@
 document.getElementById('run').addEventListener('click', () => { saveCode(); runAll() })
+document.getElementById('stop').addEventListener('click', () => { stopAll() })
 document.getElementById('fullscreen').addEventListener('click', () => { toggleFullscreen() })
 
 function addSpritesPaneEventListener() {
@@ -111,22 +112,36 @@ function initStageCursor() {
     })
 }
 
-let codeBlocksOpened = false
+let codeBlocksOpened = true
 
 function setToggleCodeBlocksEventListener () {
     const toggle = document.getElementById('toggle-codeblocks')
     const pane = document.getElementById('codeblocks')
     const code = document.getElementById('code')
+    const list = document.getElementById('codeblocks-list')
     toggle.addEventListener('click', () => {
         if(codeBlocksOpened) {
             pane.setAttribute('hide', 'true')
             toggle.setAttribute('hide', 'true')
             code.setAttribute('hide', 'true')
+            list.setAttribute('hide', 'true')
             codeBlocksOpened = false
         } else {
             pane.setAttribute('hide', 'false')
             toggle.setAttribute('hide', 'false')
             code.setAttribute('hide', 'false')
+            list.setAttribute('hide', 'false')
+
+            codeBlocksOpened = true
+        }
+    })
+    pane.addEventListener('click', () => {
+        if(!codeBlocksOpened) {
+            alert("THE WHAT now")
+            pane.setAttribute('hide', 'false')
+            toggle.setAttribute('hide', 'false')
+            code.setAttribute('hide', 'false')
+            list.setAttribute('hide', 'false')
             codeBlocksOpened = true
         }
     })
@@ -180,12 +195,12 @@ function addCodeBlocksScrollEventListener() {
     let oldScroll
     let oldMouseY
     let mouseY
-    codeBlockList.addEventListener('pointerdown', (e) => {
+    codeBlockList.addEventListener('mousedown', (e) => {
         isScrolling = true
         oldScroll = codeBlockList.scrollTop
         oldMouseY = mouseY
     })
-    codeBlockList.addEventListener('pointerup', (e) => {
+    codeBlockList.addEventListener('mouseup', (e) => {
         isScrolling = false
     })
     codeBlockList.addEventListener('mousemove', (e) => {
@@ -196,4 +211,12 @@ function addCodeBlocksScrollEventListener() {
     })
 }
 addCodeBlocksScrollEventListener()
+
+document.getElementById("warning").addEventListener('click', function () {
+        this.style.height = 0;
+    setTimeout(() => {
+        this.remove()
+    }, 200);
+})
+
 

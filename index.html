@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <div id="top-bar">
-    </div>
+<div id="warning">Warning: This editor is still work in progress! Do not build anything important in here yet!</div>
+<div id="top-bar"></div>
   <div id="editor-wrapper">
     <div id="fullscreen-wrapper" hidden></div>
     <div id="editor">
@@ -19,7 +19,7 @@
                     <div id="code-pane-divider">
                         <div id="codeblocks" hide="true">
                             <div id="codeblock-title">
-                                <p class="codeblock-title">Codeblocks</p>
+                                <p class="codeblock-title">blocks</p>
                                 <div id="toggle-codeblocks" hide="true"><img src="assets/codeblocks/bar/close.svg" alt="" id="codeblock-toggle-icon" hide="true"></div>
                             </div>
                             <div id="codeblocks-list"></div>
@@ -45,16 +45,16 @@
     </div>
     <div id="right-wrapper">
         <div id="action-bar">
-            <div id="run" class="action-bar-button"><img src="assets/action-bar/start.svg" alt=""></div>
-            <div id="stop" class="action-bar-button"><img src="assets/action-bar/stop.svg" alt=""></div>
-            <div id="slow" class="action-bar-button"><img src="assets/action-bar/slow.svg" alt=""></div>
-            <div id="fullscreen" class="action-bar-button"><img src="assets/action-bar/fullscreen.svg" alt=""></div>
+            <div id="run" class="action-bar-button" title="run"><img src="assets/action-bar/start.svg" alt=""></div>
+            <div id="stop" class="action-bar-button" title="stop"><img src="assets/action-bar/stop.svg" alt=""></div>
+            <div id="slow" class="action-bar-button" title="slow mode, waits a frame before execution"><img src="assets/action-bar/slow.svg" alt=""></div>
+            <div id="fullscreen" class="action-bar-button" title="toggle fullscreen"><img src="assets/action-bar/fullscreen.svg" alt=""></div>
         </div>
         <div id="canvas-wrapper">
           <canvas id="stage" width="640" height="480"></canvas>  
         </div>
         <div id="sprites">
-            <div id="new-sprite">
+            <div id="new-sprite" title="create new sprite">
                 <img src="assets/sprite-pane/plus.svg" alt="">
             </div>
         </div>
